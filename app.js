@@ -14,6 +14,14 @@ app.get("/", function (req, res) {
   res.render("home");
 });
 
+app.get("/contact", function (req, res) {
+  res.render("contact");
+});
+
+app.get("/cart", function (req, res) {
+  res.render("cart");
+});
+
 app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
