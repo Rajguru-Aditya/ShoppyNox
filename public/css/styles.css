@@ -24,14 +24,23 @@ hr {
 
 .container {
   display: flex;
-  justify-content: space-around;
   padding: 50px;
+  flex-direction: column;
   height: 100vh;
 }
 
+.card-container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .card {
-  width: 100%;
+  width: 400px;
   height: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card a {
@@ -41,6 +50,29 @@ hr {
 
 .card img {
   height: 300px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .card-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    padding: 50px;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .card {
+    width: 300px;
+    height: 400px;
+  }
 }
 
 /* --------------Contact------------ */
@@ -56,13 +88,15 @@ hr {
 }
 
 /* --------------Footer------------ */
+
 /* Social Links */
 .socialLinks {
-  position: relative;
-  bottom: 0;
-  width: 100%;
   text-align: center;
   background-color: #2c3e50;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .socialLinks i {
