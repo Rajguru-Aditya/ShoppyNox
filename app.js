@@ -3,6 +3,20 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 
+mongoose.connect("mongodb://localhost:27017/shoppinoxDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+});
+
+const contactSchema = {
+  name: String,
+  email: String,
+  message: String,
+};
+
+const Contact = mongoose.model("Contact", contactSchema);
+
 const cost = "₹90000";
 const desc = "Gaming Laptop";
 const imgSrc =
@@ -27,8 +41,17 @@ app.post("/contact", function (req, res) {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
-  console.log(name, email, message);
-  res.redirect("/");
+
+  const contact = new Contact({
+    name: name,
+    email: email,
+    message: message,
+  });
+  contact.save(function (err) {
+    if (!err) {
+      res.redirect("/");
+    }
+  });
 });
 
 app.get("/cart", function (req, res) {
