@@ -52,29 +52,6 @@ hr {
   height: 300px;
 }
 
-@media only screen and (max-width: 1400px) {
-  .card-container {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-  }
-
-  .container {
-    display: flex;
-    padding: 50px;
-    height: 100%;
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-
-@media only screen and (max-width: 430px) {
-  .card {
-    width: 300px;
-    height: 400px;
-  }
-}
-
 /* --------------Contact------------ */
 .form-container {
   display: flex;
@@ -89,21 +66,48 @@ hr {
 
 /* --------------Product------------ */
 
-.prod-card {
-  width: 400px;
-  height: 400px;
-  margin-left: 10px;
-  margin-right: 10px;
+.prod-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.prod-card img {
-  height: 100%;
+.prod-title {
+  margin: 20px auto;
+  text-align: center;
+  width: 50vh;
+  border: 1px solid rgb(212, 212, 212);
+  box-shadow: 5px 10px 8px #888;
+  border-radius: 10px;
+}
+
+.prod-img {
+  width: 50vh;
+  margin: 0 10px 20px;
+  box-shadow: 5px 10px 8px #888;
+  border-radius: 10px;
 }
 
 .prod-desc {
-  border: 1px solid rgb(172, 172, 172);
-  width: 90%;
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  width: 50vh;
+  padding: 20px;
+  margin: 0 10px 20px;
+  box-shadow: 5px 10px 8px #888;
+}
+
+.prod-desc p {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.prod-desc button {
+  width: 100%;
 }
 
 /* --------------Footer------------ */
@@ -124,4 +128,35 @@ hr {
 .socialLinks i:hover {
   color: #46b986;
   transition: 0.5s ease;
+}
+
+/* --------------Media queries for responsive design------------ */
+
+@media only screen and (max-width: 1400px) {
+  .card-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    padding: 50px;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .prod-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .card {
+    width: 300px;
+    height: 400px;
+  }
 }

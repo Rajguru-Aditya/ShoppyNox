@@ -1,27 +1,19 @@
 <%-include("header")-%>
 
-<header> 
-<h1><%= prodName %></h1>
-<hr>
-</header>
+<div class="prod-title"> 
+    <h1><%= prodName %></h1>
+</div>
 
-<div class="container">
-    <div class="card-container">
-        <div class="flex-container">
-            <div class="prod-card mb-3">
-            <img src="<%= prodImg%>" alt="<%= prodName%>">
-            </div>
-        </div>
+<div class="prod-container">
+    <img class="prod-img" src="<%= prodImg %>" alt="<%= prodName %>">
+
+    <div class="prod-desc">
+        <p><%= prodCost %></p>
+        <p><%= prodRating %></p>
+        <button class="btn btn-lg btn-primary" type="button">
+            Add to cart <i class="fas fa-shopping-cart"></i>
+        </button>
     </div>
-    <div class="flex-container">
-            <div class="prod-desc mb-3">
-                <div class="card-body">
-                    <p class="card-text"><%= prodCost %></p>
-                    <p class="card-text"><%= prodRating %></p>
-                    <p class="card-text"><%= prodMake %></p>
-                </div>
-            </div>
-        </div>
 </div>
 
 <%-include("footer")-%>
