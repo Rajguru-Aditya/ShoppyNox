@@ -87,6 +87,25 @@ hr {
   width: 450px;
 }
 
+/* --------------Product------------ */
+
+.prod-card {
+  width: 400px;
+  height: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.prod-card img {
+  height: 100%;
+}
+
+.prod-desc {
+  border: 1px solid rgb(172, 172, 172);
+  width: 90%;
+  height: 400px;
+}
+
 /* --------------Footer------------ */
 
 /* Social Links */

@@ -8,15 +8,20 @@
 <div class="container">
     <div class="card-container">
         <div class="flex-container">
-            <div class="card mb-3">
+            <div class="prod-card mb-3">
             <img src="<%= prodImg%>" alt="<%= prodName%>">
-                <div class="card-body">
-                    <p class="card-text"><%= prodCost %></p>
-                    <p class="card-text"><%= prodName %></p>
-                </div>
             </div>
         </div>
     </div>
+    <div class="flex-container">
+            <div class="prod-desc mb-3">
+                <div class="card-body">
+                    <p class="card-text"><%= prodCost %></p>
+                    <p class="card-text"><%= prodRating %></p>
+                    <p class="card-text"><%= prodMake %></p>
+                </div>
+            </div>
+        </div>
 </div>
 
 <%-include("footer")-%>

@@ -3,7 +3,6 @@
 <div class="container">
     <div class="card-container">
     <% products.forEach(function(product){ %>
-        <div class="flex-container">
             <div class="card mb-3">
             <img src="<%= product.img%>" alt="<%= product.name%>">
             <a href="/product/<%-product._id%>">
@@ -13,7 +12,6 @@
                 </div>
             </a>
             </div>
-        </div>
     <%})%>
     </div>
 </div>

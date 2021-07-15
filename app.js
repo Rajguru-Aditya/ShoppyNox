@@ -13,6 +13,8 @@ const productSchema = {
   name: String,
   cost: String,
   img: String,
+  rating: String,
+  make: String,
 };
 
 const contactSchema = {
@@ -28,6 +30,8 @@ const laptop = new Product({
   name: "Gaming Laptop",
   cost: "₹90000",
   img: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
+  rating: "⭐⭐⭐⭐",
+  make: "Alienware",
 });
 // laptop.save();
 
@@ -35,12 +39,16 @@ const phone = new Product({
   name: "Smartfone 366",
   cost: "₹18000",
   img: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=616&q=80",
+  rating: "⭐⭐⭐",
+  make: "Asus",
 });
 
 const shirt = new Product({
   name: "Nice Shirt",
   cost: "₹3000",
   img: "https://images.unsplash.com/photo-1602810318660-d2c46b750f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+  rating: "⭐⭐⭐⭐⭐",
+  make: "Cotton Knight",
 });
 
 // const defaultProducts = [laptop, phone, shirt];
@@ -104,6 +112,8 @@ app.get("/product/:productId", function (req, res) {
         prodName: result.name,
         prodCost: result.cost,
         prodImg: result.img,
+        prodRating: result.rating,
+        prodMake: result.make,
       });
     }
   });
