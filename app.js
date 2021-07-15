@@ -43,12 +43,12 @@ const shirt = new Product({
   img: "https://images.unsplash.com/photo-1602810318660-d2c46b750f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
 });
 
-const defaultProducts = [laptop, phone, shirt];
-Product.insertMany(defaultProducts, function (err) {
-  if (!err) {
-    console.log("Items added!");
-  }
-});
+// const defaultProducts = [laptop, phone, shirt];
+// Product.insertMany(defaultProducts, function (err) {
+//   if (!err) {
+//     console.log("Items added!");
+//   }
+// });
 
 // const cost = "₹90000";
 // const desc = "Gaming Laptop";
@@ -93,6 +93,20 @@ app.post("/contact", function (req, res) {
 
 app.get("/cart", function (req, res) {
   res.render("cart");
+});
+
+app.get("/product/:productId", function (req, res) {
+  const requestedId = req.params.productId;
+
+  Product.findOne({ _id: requestedId }, function (err, result) {
+    if (!err) {
+      res.render("product", {
+        prodName: result.name,
+        prodCost: result.cost,
+        prodImg: result.img,
+      });
+    }
+  });
 });
 
 app.listen(3000, function () {
