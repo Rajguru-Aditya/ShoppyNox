@@ -103,6 +103,10 @@ app.get("/cart", function (req, res) {
   res.render("cart");
 });
 
+app.post("/cart", function (req, res) {
+  res.render("cart");
+});
+
 app.get("/product/:productId", function (req, res) {
   const requestedId = req.params.productId;
 

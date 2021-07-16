@@ -1,19 +1,27 @@
 <%-include("header")-%>
 
-<div class="prod-title"> 
-    <h1><%= prodName %></h1>
-</div>
-
-<div class="prod-container">
-    <img class="prod-img" src="<%= prodImg %>" alt="<%= prodName %>">
-
-    <div class="prod-desc">
-        <p><%= prodCost %></p>
-        <p><%= prodRating %></p>
-        <button class="btn btn-lg btn-light" type="button">
-            Add to cart <i class="fas fa-shopping-cart"></i>
-        </button>
+<form method="post" action="/cart">
+    <div class="prod-title"> 
+        <h1><%= prodName %></h1>
     </div>
-</div>
+
+    <div class="prod-container">
+        <img class="prod-img" src="<%= prodImg %>" alt="<%= prodName %>">
+
+        <div class="prod-desc">
+            <p><%= prodCost %></p>
+            <p><%= prodRating %></p>
+            <button class="btn btn-lg btn-light" type="submit">
+                Add to cart <i class="fas fa-shopping-cart"></i>
+            </button>
+            
+            <a href="/cart">
+                <button class="btn btn-lg btn-light mt-3" type="button">
+                    Check cart <i class="fas fa-shopping-cart"></i>
+                </button>
+            </a>
+        </div>
+    </div>
+</form>
 
 <%-include("footer")-%>
