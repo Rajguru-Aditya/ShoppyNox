@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card-container">
     <% products.forEach(function(product){ %>
-            <div class="card mb-3">
+            <div id="card" class="card mb-3">
             <img src="<%= product.img%>" alt="<%= product.name%>">
             <a href="/product/<%-product._id%>">
                 <div class="card-body">
